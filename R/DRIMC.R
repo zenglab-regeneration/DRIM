@@ -110,7 +110,7 @@ Parameter_settings<-function(resolution=4,colname){
 Planarian_run<-function(){
   package_path<-packages_path()
   os<-import('os')
-  os$chdir('package_path')
+  os$chdir(package_path)
   print("start sc_st_gene_charge")
   sc_st_gene_charge_dir=package_path
   sc_st_gene_charge_dir=paste(package_path,"/code/sc_st_gene_charge.py",sep="")
