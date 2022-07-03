@@ -31,10 +31,6 @@ env_python_set<-function(py_path){
 env_test<-function(){
   library(reticulate)
   package_flag<-TRUE
-  if(!py_available()){
-    print("The conda is not ready")
-    package_flag<-FALSE
-  }
   package_detect<-c('anndata',
                     'collections',
                     'copy',
@@ -55,8 +51,9 @@ env_test<-function(){
     if(!py_module_available(package_name)){
       py_install(package_name, pip = T)
     }
+  }
+  for(package_name in package_detect){
     if(!py_module_available(package_name)){
-      package_flag<-FALSE
       error_message<-paste(package_name,"is not ready",sep=" ")
       print(error_message)
     }
