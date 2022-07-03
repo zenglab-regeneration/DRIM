@@ -23,7 +23,7 @@ Set the path of python conda
 DRIM::env_python_set("D:/anaconda/envs/py")
 ```
 
-	Test if environment dependencies are satisfied
+Test if environment dependencies are satisfied
 ```
 DRIM::env_test()
 ```
