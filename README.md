@@ -6,7 +6,7 @@ Deconvolution followed by Region-growing,Interpolation and iterative-Mapping
 DRIM is available from GitHub with:
 ```
 # install.packages("devtools")
-devtools::install_github("hwarden162/SCEnt")
+devtools::install_github("zenglab-regeneration/DRIM")
 ```
 **Request**
 If you have already installed conda environment, please skip this step.
