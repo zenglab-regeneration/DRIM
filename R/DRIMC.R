@@ -161,4 +161,7 @@ planarian_main<-function(conda_path,resolution=4,colname){
   Planarian_run()
   #读取最终的结果
   print("over")
+  result_dir=paste(data_path,'/data/',resolution,'comb_position_mapping.csv',sep='')
+  result=readCSV(result_dir)
+  return(result)
 }
