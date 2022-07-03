@@ -53,6 +53,9 @@ env_test<-function(){
                     'time')
   for(package_name in package_detect){
     if(!py_module_available(package_name)){
+      py_install(package_name, pip = T)
+    }
+    if(!py_module_available(package_name)){
       package_flag<-FALSE
       error_message<-paste(package_name,"is not ready",sep=" ")
       print(error_message)
