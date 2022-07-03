@@ -48,7 +48,7 @@ DRIM::data_deal(sc_exp_data = sc_rds_@assays$SCT@counts,st_exp_data = st_rds_$ti
 **resolution**：magnification  
 **colname**：selected data column  
 ```
-DRIM::planarian_main(conda_path = "D:/anaconda/envs/py",resolution = 4,colname="final_celltype")
+result=DRIM::planarian_main(conda_path = "D:/anaconda/envs/py",resolution = 4,colname="final_celltype")
 ```
 
 ```
