@@ -1,19 +1,18 @@
-#DRIM
+DRIM
 ----
 Deconvolution followed by Region-growing,Interpolation and iterative-Mapping
 ----
-##Installation
+Installation
 DRIM is available from GitHub with:
 ```
 # install.packages("devtools")
 devtools::install_github("hwarden162/SCEnt")
 ```
-##Request
+Request
 If you have already installed conda environment, please skip this step.
 **install anaconda**
 **Create a python conda environment**
 **example: conda create -n test python=3.9**
-##example
 ```
 library(DRIM)
 help(package="DRIM")
