@@ -1,0 +1,17 @@
+Package: DRIM
+Title: DRIM
+Version: 0.0.0.9000
+Authors@R: 
+    person("SH", "HAY", , "first.last@example.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: DRIM.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.0
+Imports: 
+    dplyr,
+    patchwork,
+    reticulate,
+    scran,
+    Seurat
