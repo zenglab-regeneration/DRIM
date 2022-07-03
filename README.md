@@ -28,7 +28,7 @@ Test if environment dependencies are satisfied
 DRIM::env_test()
 ```
 
-	**sc_rds**_:*Single-cell transcriptome data*
+**sc_rds**_:*Single-cell transcriptome data*
 **st_rds**_:Spatial transcriptome data  
 **plot_data**_:Cell type file divided by deconvolution  
 ```
