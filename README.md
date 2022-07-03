@@ -13,7 +13,6 @@ If you have already installed conda environment, please skip this step.
 -  **install anaconda**[anaconda](https://www.anaconda.com/ "anaconda")
 - **Create a python conda environment**
 **example: conda create -n test python=3.9**
-**example**
 ```
 library(DRIM)
 help(package="DRIM")
