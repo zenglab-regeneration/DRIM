@@ -28,9 +28,9 @@ Test if environment dependencies are satisfied
 DRIM::env_test()
 ```
 
-**sc_rds**_:*Single-cell transcriptome data*
-**st_rds**_:Spatial transcriptome data  
-**plot_data**_:Cell type file divided by deconvolution  
+**sc_rds**_:*Single-cell transcriptome data*  
+**st_rds**_:Spatial transcriptome data    
+**plot_data**_:Cell type file divided by deconvolution    
 ```
 sc_rds_<-readRDS("D:/code/data/sct_data_1.5d.rds")
 st_rds_<-readRDS("D:/code/data/spatial_obj.rds")
