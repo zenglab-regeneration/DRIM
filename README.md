@@ -41,7 +41,7 @@ plot_data_=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRU
 **loc_data **：  
 **plot_data**：Cell type file divided by deconvolution  
 ```
-DRIM::data_deal(sc_exp_data = sc_rds_@assays$SCT@counts,st_exp_data = st_rds_$timing_0h@assays$Spatial@counts,sc_celltype_data = sc_rds_@meta.data,
+DRIM::data_deal(sc_exp_data = sc_rds_@assays$SCT@data,st_exp_data = st_rds_$timing_0h@assays$Spatial@data,sc_celltype_data = sc_rds_@meta.data,
                 loc_data = st_rds_$timing_0h@images$slice1@coordinates,plot_data = plot_data_)
 ```
 **resolution**：magnification  
