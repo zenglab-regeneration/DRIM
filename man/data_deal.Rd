@@ -5,12 +5,16 @@
 \title{data_deal
 data processing}
 \usage{
-data_deal(sc_rds, st_rds, plot_data)
+data_deal(sc_exp_data, st_exp_data, sc_celltype_data, loc_data, plot_data)
 }
 \arguments{
-\item{sc_rds}{Single-cell transcriptome data}
+\item{sc_exp_data}{Single Cell Transcriptome Expression Matrix}
 
-\item{st_rds}{Spatial transcriptome data}
+\item{st_exp_data}{Spatial transcriptome expression matrix}
+
+\item{sc_celltype_data}{Cell type mete data}
+
+\item{loc_data}{loc_data}
 
 \item{plot_data}{convolution data}
 }

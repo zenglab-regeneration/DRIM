@@ -1,3 +1,8 @@
+#'@aliases DRIM
+
+
+
+
 packages_path<-function(){
   packages_dir<-system.file(package = "DRIM")
   return(packages_dir)
@@ -59,22 +64,24 @@ env_test<-function(){
 #'data processing
 #'@description
 #'Preprocess the data to get the data we need later.
-#'@param sc_rds Single-cell transcriptome data
-#'@param st_rds Spatial transcriptome data
+#'@param sc_exp_data Single Cell Transcriptome Expression Matrix
+#'@param st_exp_data Spatial transcriptome expression matrix
+#'@param sc_celltype_data Cell type mete data
+#'@param loc_data loc_data
 #'@param plot_data convolution data
 #'@export
-data_deal<-function(sc_rds,st_rds,plot_data){
+data_deal<-function(sc_exp_data,st_exp_data,sc_celltype_data,loc_data,plot_data){
   data_path<-packages_path()
   data_dir<-paste(data_path,'/data',sep="")
   if(!dir.exists(data_dir)){
     dir.create(data_dir)
   }
-  sp_loc = st_rds@images$anterior1@coordinates
+  sp_loc = loc_data
   # plot_data <- read.csv("/home/sunhang/data/New_Mouse_brain/deconvolution.csv", row.names = 1,header = TRUE)
-  sc_exp = sc_rds@assays[["RNA"]]@data
+  sc_exp = sc_exp_data
 
   row.names(sc_exp)
-  st_exp = st_rds@assays[["Spatial"]]@data
+  st_exp = st_exp_data
   row.names(st_exp)
   row.names(sc_exp)
 
@@ -89,7 +96,7 @@ data_deal<-function(sc_rds,st_rds,plot_data){
   write.csv(sc_exp,sc_exp_dir)
   write.csv(st_exp,st_exp_dir)
   write.csv(sp_loc,sp_loc_dir)
-  sc_celltype = sc_rds@meta.data
+  sc_celltype = sc_celltype_data
   write.csv(sc_celltype,sc_celltype_dir)
 
 }
@@ -152,5 +159,6 @@ planarian_main<-function(conda_path,resolution=4,colname){
   }
   Parameter_settings(resolution,colname)
   Planarian_run()
+  #读取最终的结果
   print("over")
 }
