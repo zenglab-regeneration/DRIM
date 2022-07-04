@@ -5,14 +5,14 @@
 \title{planarian_main
 main}
 \usage{
-planarian_main(conda_path, resolution = 4, colname)
+planarian_main(resolution = 4, colname)
 }
 \arguments{
-\item{conda_path}{Location of the conda}
-
 \item{resolution}{The default program magnification is four times}
 
 \item{colname}{selected column name}
+
+\item{conda_path}{Location of the conda}
 }
 \description{
 If the environment is correct, you can run this program directly to get the result

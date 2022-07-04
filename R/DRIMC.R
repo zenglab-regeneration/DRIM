@@ -147,13 +147,13 @@ Planarian_run<-function(){
 #'@param resolution The default program magnification is four times
 #'@param colname selected column name
 #'@export
-planarian_main<-function(conda_path,resolution=4,colname){
+planarian_main<-function(resolution=4,colname){
   data_path<-packages_path()
   data_dir<-paste(data_path,'/data',sep="")
   if(!dir.exists(data_dir)){
     dir.create(data_dir)
   }
-  env_python_set(py_path=conda_path)
+  #env_python_set(py_path=conda_path)
   if(!env_test()){
     stop("The conda is not ready")
   }
@@ -162,6 +162,6 @@ planarian_main<-function(conda_path,resolution=4,colname){
   #读取最终的结果
   print("over")
   result_dir=paste(data_path,'/data/',resolution,'comb_position_mapping.csv',sep='')
-  result=readCSV(result_dir)
+  result=read.csv(result_dir)
   return(result)
 }
