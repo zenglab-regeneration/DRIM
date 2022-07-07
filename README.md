@@ -11,7 +11,7 @@ devtools::install_github("zenglab-regeneration/DRIM")
 ```
 **Request**
 If you have already installed conda environment, please skip this step.
--  **install anaconda**[anaconda](https://www.anaconda.com/ "anaconda")
+-  **install **[anaconda](https://www.anaconda.com/ "anaconda")
 - **Create a python conda environment**
 **example: conda create -n test python=3.9**
 ```
