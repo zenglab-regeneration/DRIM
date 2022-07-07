@@ -1,6 +1,6 @@
 # DRIM
-Deconvolution followed by Region-growing,Interpolation and iterative-Mapping  
-https://cell.ownbox.cn/
+DRIM:Deconvolution followed by Region-growing,Interpolation and iterative-Mapping  
+Website URL：https://cell.ownbox.cn/
 ## Installation
 DRIM is available from GitHub with:
 ```
