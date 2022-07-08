@@ -74,5 +74,5 @@ DRIM::data_deal(sc_exp_data = sc_rds_@assays$SCT@data,
 ```
 result <- DRIM::planarian_main(resolution = 4,colname="final_celltype")
 ```
-return is a S3 object , you could use result$Drim get.
+return is a S4 object , you could use result@Amplification.
 
