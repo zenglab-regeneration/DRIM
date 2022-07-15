@@ -161,7 +161,7 @@ planarian_main<-function(resolution=4,colname){
   Planarian_run()
   #读取最终的结果
   print("over")
-  iterative_mapping_result_celltype_it_dir=paste(data_path,'/data/',resolution,'iterative_mapping_result_celltype_it.csv',sep='')
+  iterative_mapping_result_celltype_it_dir=paste(data_path,'/data/',resolution,'/iterative_mapping_result_celltype_it.csv',sep='')
   iterative_mapping_result_celltype_it=read.csv(iterative_mapping_result_celltype_it_dir)
   setClass("Drim",representation(Amplification = "list"))
   Drimdata<-new("Drim",Amplification = iterative_mapping_result_celltype_it)
