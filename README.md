@@ -54,9 +54,9 @@ env_test()
 If you don't have plot data, don't worry, you can use **data_plot** to generate it.
 
 ```
-sc_rds_<-readRDS("D:/code/data/sct_data_1.5d.rds")
-st_rds_<-readRDS("D:/code/data/spatial_obj.rds")
-plot_data_=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
+sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
+st_rds<-readRDS("D:/code/data/spatial_obj.rds")
+plot_data=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
 ```
 **sc_exp_data**：Single-cell transcriptome gene expression matrix  
 **st_exp_data**：Spatial transcriptome gene expression matrix  
@@ -64,11 +64,11 @@ plot_data_=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRU
 **loc_data **：coordinates 
 **plot_data**：Cell type file divided by deconvolution  
 ```
-data_deal(sc_exp_data = sc_rds_@assays$SCT@data,  
-                st_exp_data = st_rds_$timing_0h@assays$Spatial@data,
-                sc_celltype_data = sc_rds_@meta.data,
-                loc_data = st_rds_$timing_0h@images$slice1@coordinates,
-                plot_data = plot_data_)
+data_deal(sc_exp_data = sc_rds@assays$SCT@data,  
+                st_exp_data = st_rds$timing_0h@assays$Spatial@data,
+                sc_celltype_data = sc_rds@meta.data,
+                loc_data = st_rds$timing_0h@images$slice1@coordinates,
+                plot_data = plot_data)
 ```
 ### Run
 **resolution**：magnification  
