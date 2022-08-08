@@ -306,7 +306,7 @@ get_seurat_result <- function(sc_rds,resolution){
 #' @export
 simple_draw <- function(){
   library(png)
-  call_python_program('draw.py')
+  call_python_program('draw')
   dir=packages_path()
   parameter_settings_path = paste(dir,"/data/parameter_settings.csv",sep="")
   resolution <- fread(input = parameter_settings_path)[2,1]
