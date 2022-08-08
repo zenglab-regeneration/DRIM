@@ -82,7 +82,7 @@ Returns a dataframe object, if you want to return a seurat object, please use ge
 ```
 pic <- simple_draw()
 ```
-You can get a simple drawing, if you want to customize the drawing use the results of the draw in a further draw  
+You can use it to make a simple preliminary drawing of the results.
 
 ### get_seurat_result
 **resolution**:magnification  
