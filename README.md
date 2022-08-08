@@ -76,7 +76,7 @@ data_deal(sc_exp_data = sc_rds_@assays$SCT@data,
 ```
 result <- drim(resolution = 4,thread = 7,colname="final_celltype")
 ```
-return is a dataframe.
+Returns a dataframe object, if you want to return a seurat object, please use get_seurat_result.  
 
 ### get_seurat_result
 **resolution**:magnification  
