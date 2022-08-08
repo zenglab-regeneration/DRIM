@@ -78,6 +78,12 @@ result <- drim(resolution = 4,thread = 7,colname="final_celltype")
 ```
 Returns a dataframe object, if you want to return a seurat object, please use get_seurat_result.  
 
+### simple_draw
+```
+pic <- simple_draw()
+```
+You can get a simple drawing, if you want to customize the drawing use the results of the draw in a further draw  
+
 ### get_seurat_result
 **resolution**:magnification  
 **sc_rds**:Single-cell transcriptome data
