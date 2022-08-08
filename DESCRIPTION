@@ -1,12 +1,10 @@
 Package: DRIM
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Deconvolution followed by Region-growing,Interpolation and iterative-Mapping
+Version: 1.0.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person("SH", "HAY", "hangsun20@mails.jlu.edu.cn","heay21@mails.jlu.edu.cn", role = c("aut", "cre"))
 Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+License: `use_mit_license()`
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
