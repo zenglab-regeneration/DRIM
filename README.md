@@ -51,7 +51,6 @@ env_test()
 **sc_rds**:*Single-cell transcriptome data*  
 **st_rds**:Spatial transcriptome data    
 **plot_data**:Cell type file divided by deconvolution  
-If you don't have plot data, don't worry, you can use **data_plot** to generate it.
 
 ```
 sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
