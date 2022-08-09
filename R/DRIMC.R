@@ -310,7 +310,7 @@ simple_draw <- function(){
   dir=packages_path()
   parameter_settings_path = paste(dir,"/data/parameter_settings.csv",sep="")
   resolution <- read.csv(parameter_settings_path)[1,1]
-  simple_draw_pic_path <- paste(dir,'/data/',resolution,'mapping_result.png',sep = '')
+  simple_draw_pic_path <- paste(dir,'/data/',resolution,'/mapping_result.png',sep = '')
   simple_draw_pic <- readPNG(simple_draw_pic_path)
   return(simple_draw_pic)
 }
