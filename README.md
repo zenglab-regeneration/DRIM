@@ -2,17 +2,12 @@
 DRIM:Deconvolution followed by Region-growing,Interpolation and iterative-Mapping  
 website url:http://db.regeomics.cn/
 
-## Overview
+## Overview 
+&nbsp;  
+To achieve single-cell resolution, we developed the single-cell Deconvolution followed by Region-growing, Interpolation and iterative-Mapping (DRIM) algorithm that integrates spatial gene expression with scRNA-seq data from the corresponding time-point to infer single-cell resolution expression maps. DRIM is a R package for increasing the resolution of the spatial transcriptome and mapping single cells.    
 &nbsp;  
 &nbsp;  
-&nbsp;  
-To achieve single-cell resolution, we developed the single-cell Deconvolution followed by Region-growing, Interpolation and iterative-Mapping (DRIM) algorithm that integrates spatial gene expression with scRNA-seq data from the corresponding time-point to infer single-cell resolution expression maps. DRIM is a R package for increasing the resolution of the spatial transcriptome and mapping single cells.  
-&nbsp;  
-&nbsp;  
-&nbsp;  
-&nbsp;  
-![DRIM](flow_chart/DRIM.png)  
-&nbsp;  
+![DRIM](flow_chart/DRIM.png)   
 &nbsp;  
 &nbsp;  
   
