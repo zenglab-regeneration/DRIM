@@ -1,5 +1,6 @@
 # DRIM
 DRIM:Deconvolution followed by Region-growing,Interpolation and iterative-Mapping  
+This is an R package  
 website url:http://db.regeomics.cn/
 
 ## Overview 
