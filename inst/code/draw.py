@@ -1,6 +1,5 @@
 import util_code
 import pandas as pd
-warnings.filterwarnings("ignore")
 dir_root = os.getcwd()
 parameter_settings_f=pd.read_csv(dir_root+'/data/parameter_settings.csv')
 resolution = int(parameter_settings_f['parameter'][0])
