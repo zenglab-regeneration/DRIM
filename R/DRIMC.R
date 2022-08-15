@@ -75,11 +75,11 @@ data_deal <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_data,plot_dat
   if(!dir.exists(data_path)){
     dir.create(data_path)
   }
-  fwrite(plot_data,file = paste(data_path,"/deconvolution.csv",sep = ""))
-  fwrite(sc_exp_data,file = paste(data_path,"/sc_exp.csv",sep = ""))
-  fwrite(st_exp_data,file = paste(data_path,"/st_exp.csv",sep = ""))
-  fwrite(loc_data,file = paste(data_path,'/st_loc.csv',sep = ""))
-  fwrite(sc_celltype_data,file = paste(data_path,'/sc_celltype.csv',sep = ""))
+  fwrite(as.data.frame(plot_data),file = paste(data_path,"/deconvolution.csv",sep = ""))
+  fwrite(as.data.frame(sc_exp_data),file = paste(data_path,"/sc_exp.csv",sep = ""))
+  fwrite(as.data.frame(st_exp_data),file = paste(data_path,"/st_exp.csv",sep = ""))
+  fwrite(as.data.frame(loc_data),file = paste(data_path,'/st_loc.csv',sep = ""))
+  fwrite(as.data.frame(sc_celltype_data),file = paste(data_path,'/sc_celltype.csv',sep = ""))
 }
 
 #' @title parameter_setting
@@ -124,7 +124,6 @@ Planarian_run <- function(){
 }
 
 uni_name <- function(names){
-#用于在名称后面增加id，用于名称/向量去重
   if(length(names) == length(unique(names))){
     message('no names repate!')
   }
