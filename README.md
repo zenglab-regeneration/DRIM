@@ -102,7 +102,9 @@ Printing processed plot of cell type mapped by drim.
 ```
 library(png)
 pic <- drimPlot()
-
+r <- nrow(pic)/ncol(pic) 
+plot(c(0,1),c(0,r),type = "n",xlab = "",ylab = "",asp=1)
+rasterImage(pic,0,0,1,r)
 ```
 ![DRIMplot](flow_chart/afterDRIM.png) 
 ### Get a seurat object
