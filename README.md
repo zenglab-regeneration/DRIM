@@ -58,7 +58,7 @@ testEnv()
 ### Data processing
 **sc_rds**:*Single-cell transcriptome data*  
 **st_rds**:Spatial transcriptome data    
-**deconvolution_matrix**:Cell type file divided by deconvolution  
+**deconvolution_matrix**:Spatial spot deconvolution results 
 
 ```
 sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
@@ -68,7 +68,7 @@ deconvolution_matrix = read.csv("D:/code/data/deconvolution.csv", row.names = 1,
 **sc_exp_data**：Single-cell transcriptome gene expression matrix  
 **st_exp_data**：Spatial transcriptome gene expression matrix  
 **sc_celltype_data**：meta.data  
-**loc_matrix **：Spatial transcriptome coordinates information  
+**loc_matrix**：Spatial transcriptome coordinates information  
 **deconvolution_matrix**：Spatial spot deconvolution results  
 ```
 dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,  
