@@ -58,7 +58,7 @@ testEnv()
 ### Data processing
 **sc_rds**:*Single-cell transcriptome data*  
 **st_rds**:Spatial transcriptome data    
-**plot_data**:Cell type file divided by deconvolution  
+**deconvolution_matrix**:Cell type file divided by deconvolution  
 
 ```
 sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
