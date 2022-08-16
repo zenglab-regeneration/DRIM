@@ -61,7 +61,6 @@ testEnv()
 **deconvolution_matrix**:Spatial spot deconvolution results 
 
 ```
-#Please note that data processed by this function will not be return
 sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
 st_rds<-readRDS("D:/code/data/spatial_obj.rds")
 deconvolution_matrix = read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
@@ -72,6 +71,7 @@ deconvolution_matrix = read.csv("D:/code/data/deconvolution.csv", row.names = 1,
 **loc_matrix**：Spatial transcriptome coordinates information  
 **deconvolution_matrix**：Spatial spot deconvolution results  
 ```
+#Please note that data processed by this function will be stored in the package and not be return
 dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,  
                 st_exp_data = st_rds$timing_0h@assays$Spatial@data,
                 sc_celltype_data = sc_rds@meta.data,
@@ -84,6 +84,7 @@ dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,
 **resolution**：magnification  
 **colname**：selected data column  
 ```
+#data used for this process will be automatically called if dataProcessing has been run？
 result <- drim(resolution = 4,thread = 7,colname="final_celltype")
 ```
 Returns a dataframe object, if you want to return a seurat object, please use get_seurat_result.  
