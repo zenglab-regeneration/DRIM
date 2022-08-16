@@ -55,6 +55,10 @@ pythonEnvSet("D:/anaconda/envs/testconda")
 #Check the dependent environment for the program to run, and automatically install the missing python package
 testEnv()
 ```
+### Printing raw plot
+Printing raw plot of cell type prediced by LableTransfer from Seurat.
+![DRIMplot](flow_chart/beforeDRIM.jpg) 
+
 ### Data processing
 **sc_rds**:Single-cell transcriptome data(seurat object)  
 **st_rds**:Spatial transcriptome data(seurat object)    
@@ -78,9 +82,6 @@ dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,
                 loc_matrix = st_rds$timing_0h@images$slice1@coordinates,
                 deconvolution_matrix = deconvolution_matrix)
 ```
-### Printing raw plot
-Printing raw plot of cell type prediced by LableTransfer from Seurat.
-![DRIMplot](flow_chart/beforeDRIM.jpg) 
 ### Run
 **resolution**：magnification  
 **colname**：selected data column  
