@@ -77,9 +77,9 @@ dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,
                 loc_matrix = st_rds$timing_0h@images$slice1@coordinates,
                 deconvolution_matrix = deconvolution_matrix)
 ```
-### Run
-Printing raw plot of cell type prediced by LableTransfer from Seurat.
+### Printing raw plot of cell type prediced by LableTransfer from Seurat.
 ![DRIMplot](flow_chart/beforeDRIM.jpg) 
+### Run
 **resolution**：magnification  
 **colname**：selected data column  
 ```
@@ -91,7 +91,7 @@ Returns a dataframe object, if you want to return a seurat object, please use ge
 ```
 pic <- drimPlot()
 ```
-Printing processed plot of cell type mapped by drim.
+### Printing processed plot of cell type mapped by drim.
 ![DRIMplot](flow_chart/afterDRIM.png) 
 ### Get a seurat object
 **resolution**:magnification  
