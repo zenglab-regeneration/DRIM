@@ -56,8 +56,8 @@ pythonEnvSet("D:/anaconda/envs/testconda")
 testEnv()
 ```
 ### Data processing
-**sc_rds**:*Single-cell transcriptome data*  
-**st_rds**:Spatial transcriptome data    
+**sc_rds**:Single-cell transcriptome data(seurat object)  
+**st_rds**:Spatial transcriptome data(seurat object)    
 **deconvolution_matrix**:Spatial spot deconvolution results 
 
 ```
@@ -78,7 +78,8 @@ dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,
                 loc_matrix = st_rds$timing_0h@images$slice1@coordinates,
                 deconvolution_matrix = deconvolution_matrix)
 ```
-### Printing raw plot of cell type prediced by LableTransfer from Seurat.
+### Printing raw plot
+Printing raw plot of cell type prediced by LableTransfer from Seurat.
 ![DRIMplot](flow_chart/beforeDRIM.jpg) 
 ### Run
 **resolution**：magnification  
@@ -89,11 +90,12 @@ result <- drim(resolution = 4,thread = 7,colname="final_celltype")
 ```
 Returns a dataframe object, if you want to return a seurat object, please use get_seurat_result.  
 
-### Drim plot
+### printing drim plot
+Printing processed plot of cell type mapped by drim.
 ```
 pic <- drimPlot()
+
 ```
-### Printing processed plot of cell type mapped by drim.
 ![DRIMplot](flow_chart/afterDRIM.png) 
 ### Get a seurat object
 **resolution**:magnification  
