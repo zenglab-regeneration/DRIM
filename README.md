@@ -61,6 +61,7 @@ testEnv()
 **deconvolution_matrix**:Spatial spot deconvolution results 
 
 ```
+#Please note that data processed by this function will not be return
 sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
 st_rds<-readRDS("D:/code/data/spatial_obj.rds")
 deconvolution_matrix = read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
