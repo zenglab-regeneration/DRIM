@@ -78,6 +78,7 @@ dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,
                 deconvolution_matrix = deconvolution_matrix)
 ```
 ### Run
+![DRIMplot](flow_chart/beforeDRIM.jpg) 
 **resolution**：magnification  
 **colname**：selected data column  
 ```
@@ -90,7 +91,7 @@ Returns a dataframe object, if you want to return a seurat object, please use ge
 pic <- drimPlot()
 ```
 You can use it to make a simple preliminary drawing of the results.
-![DRIMplot](flow_chart/drimplot.png) 
+![DRIMplot](flow_chart/afterDRIM.png) 
 ### Get a seurat object
 **resolution**:magnification  
 **sc_rds**:Single-cell transcriptome data
