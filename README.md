@@ -50,10 +50,10 @@ library('DRIM')
 help(package = 'DRIM')
 
 #set the py conda
-env_python_set("D:/anaconda/envs/testconda")
+pythonEnvSet("D:/anaconda/envs/testconda")
 
 #Check the dependent environment for the program to run, and automatically install the missing python package
-env_test()
+testEnv()
 ```
 ### Data processing
 **sc_rds**:*Single-cell transcriptome data*  
@@ -63,7 +63,7 @@ env_test()
 ```
 sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
 st_rds<-readRDS("D:/code/data/spatial_obj.rds")
-plot_data=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
+deconvolution_matrix = read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
 ```
 **sc_exp_data**：Single-cell transcriptome gene expression matrix  
 **st_exp_data**：Spatial transcriptome gene expression matrix  
@@ -71,11 +71,11 @@ plot_data=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE
 **loc_matrix **：Spatial transcriptome coordinates information  
 **deconvolution_matrix**：Spatial spot deconvolution results  
 ```
-data_deal(sc_exp_data = sc_rds@assays$SCT@data,  
+dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,  
                 st_exp_data = st_rds$timing_0h@assays$Spatial@data,
                 sc_celltype_data = sc_rds@meta.data,
-                loc_data = st_rds$timing_0h@images$slice1@coordinates,
-                plot_data = plot_data)
+                loc_matrix = st_rds$timing_0h@images$slice1@coordinates,
+                deconvolution_matrix = deconvolution_matrix)
 ```
 ### Run
 **resolution**：magnification  
@@ -87,7 +87,7 @@ Returns a dataframe object, if you want to return a seurat object, please use ge
 
 ### Drim plot
 ```
-pic <- simple_draw()
+pic <- drimPlot()
 ```
 You can use it to make a simple preliminary drawing of the results.
 ![DRIMplot](flow_chart/drimplot.png) 
@@ -95,6 +95,6 @@ You can use it to make a simple preliminary drawing of the results.
 **resolution**:magnification  
 **sc_rds**:Single-cell transcriptome data
 ```
-obj <- get_seurat_result(sc_rds,resplution = 4)
+obj <- getSeuratObject(sc_rds,resplution = 4)
 ```
 This feature is still being tested, and it is not recommended to use it now
