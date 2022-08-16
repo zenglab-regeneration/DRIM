@@ -65,20 +65,20 @@ testEnv <- function(){
 #' @param sc_exp_data Single Cell Transcriptome Expression Matrix
 #' @param st_exp_data Spatial transcriptome expression matrix
 #' @param sc_celltype_data Cell type mete data
-#' @param loc_data loc_data
-#' @param plot_data convolution data
+#' @param loc_matrix Spatial transcriptome coordinates information
+#' @param deconvolution_matrix Spatial spot deconvolution results
 #' @import data.table
 #' @export
-dataProcessing <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_data,plot_data){
+dataProcessing <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_matrix,deconvolution_matrix){
   library(data.table)
   data_path <- paste(packages_path(),'/data',sep = "")
   if(!dir.exists(data_path)){
     dir.create(data_path)
   }
-  fwrite(as.data.frame(plot_data),file = paste(data_path,"/deconvolution.csv",sep = ""))
+  fwrite(as.data.frame(deconvolution_matrix),file = paste(data_path,"/deconvolution.csv",sep = ""))
   fwrite(as.data.frame(sc_exp_data),file = paste(data_path,"/sc_exp.csv",sep = ""))
   fwrite(as.data.frame(st_exp_data),file = paste(data_path,"/st_exp.csv",sep = ""))
-  fwrite(as.data.frame(loc_data),file = paste(data_path,'/st_loc.csv',sep = ""))
+  fwrite(as.data.frame(loc_matrix),file = paste(data_path,'/st_loc.csv',sep = ""))
   fwrite(as.data.frame(sc_celltype_data),file = paste(data_path,'/sc_celltype.csv',sep = ""))
 }
 
@@ -286,11 +286,11 @@ map_toseurat <- function(sc_dat, map_dat, project = 'project'){
   return(obj)
 }
 
-#' @title get_seurat_result
+#' @title getSeuratObject
 #' @description Returns a seurat object, in testing, not recommended
 #' @import data.table
 #' @export
-get_seurat_result <- function(sc_rds,resolution){
+getSeuratObject <- function(sc_rds,resolution){
   library(data.table)
   data_path <- packages_path()
   iterative_mapping_result_celltype_it_dir=paste(data_path,'/data/',resolution,'/mapping_result.csv',sep='')
@@ -298,11 +298,11 @@ get_seurat_result <- function(sc_rds,resolution){
   obj <- map_toseurat(sc_dat = sc_rds,map_dat = map_dat)
   return(obj)
 }
-#' @title simple_draw
+#' @title drimPlot
 #' @description Returns the result of a simple draw
 #' @import png
 #' @export
-simple_draw <- function(){
+drimPlot <- function(){
   library(png)
   call_python_program('draw')
   dir=packages_path()

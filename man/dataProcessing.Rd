@@ -5,7 +5,13 @@
 \title{dataProcessing
 data processing}
 \usage{
-dataProcessing(sc_exp_data, st_exp_data, sc_celltype_data, loc_data, plot_data)
+dataProcessing(
+  sc_exp_data,
+  st_exp_data,
+  sc_celltype_data,
+  loc_matrix,
+  deconvolution_matrix
+)
 }
 \arguments{
 \item{sc_exp_data}{Single Cell Transcriptome Expression Matrix}
@@ -14,9 +20,9 @@ dataProcessing(sc_exp_data, st_exp_data, sc_celltype_data, loc_data, plot_data)
 
 \item{sc_celltype_data}{Cell type mete data}
 
-\item{loc_data}{loc_data}
+\item{loc_matrix}{Spatial transcriptome coordinates information}
 
-\item{plot_data}{convolution data}
+\item{deconvolution_matrix}{Spatial spot deconvolution results}
 }
 \description{
 Preprocess the data to get the data we need later.
