@@ -205,9 +205,6 @@ drim <- function(resolution=4,thread=7,colname){
   if(!dir.exists(data_dir)){
     dir.create(data_dir)
   }
-  if(!env_test()){
-    stop("The conda is not ready")
-  }
   setParameters(resolution,thread,colname)
   Planarian_run()
   iterative_mapping_result_celltype_it_dir=paste(data_path,'/data/',resolution,'/mapping_result.csv',sep='')
@@ -219,7 +216,6 @@ drim <- function(resolution=4,thread=7,colname){
 
 
 uni_name <- function(names){
-  #用于在名称后面增加id，用于名称/向量去重
   if(length(names) == length(unique(names))){
     message('no names repate!')
   }
