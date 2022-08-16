@@ -90,7 +90,7 @@ Returns a dataframe object, if you want to return a seurat object, please use ge
 pic <- simple_draw()
 ```
 You can use it to make a simple preliminary drawing of the results.
-
+![DRIMplot](flow_chart/drimplot.png) 
 ### Get_seurat_result
 **resolution**:magnification  
 **sc_rds**:Single-cell transcriptome data
