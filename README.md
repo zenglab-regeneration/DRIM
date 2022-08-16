@@ -55,9 +55,6 @@ pythonEnvSet("D:/anaconda/envs/testconda")
 #Check the dependent environment for the program to run, and automatically install the missing python package
 testEnv()
 ```
-### Printing raw plot
-Printing raw plot of cell type prediced by LableTransfer from Seurat.
-![DRIMplot](flow_chart/beforeDRIM.jpg) 
 
 ### Data processing
 **sc_rds**:Single-cell transcriptome data(seurat object)  
@@ -69,6 +66,7 @@ sc_rds<-readRDS("D:/code/data/sct_data_1.5d.rds")
 st_rds<-readRDS("D:/code/data/spatial_obj.rds")
 deconvolution_matrix = read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE)
 ```
+
 **sc_exp_data**：Single-cell transcriptome gene expression matrix  
 **st_exp_data**：Spatial transcriptome gene expression matrix  
 **sc_celltype_data**：meta.data  
@@ -82,6 +80,14 @@ dataProcessing(sc_exp_data = sc_rds@assays$SCT@data,
                 loc_matrix = st_rds$timing_0h@images$slice1@coordinates,
                 deconvolution_matrix = deconvolution_matrix)
 ```
+### Printing raw plot
+Printing raw plot of cell type prediced by LableTransfer from Seurat.
+```
+library(seurat)
+Dimplot(sc_rds, group.by = 'final_celltype', cols = col_celltype)
+```
+![DRIMplot](flow_chart/beforeDRIM.jpg) 
+
 ### Run
 **resolution**：magnification  
 **colname**：selected data column  
