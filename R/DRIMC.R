@@ -4,7 +4,7 @@ packages_path <- function(){
   packages_dir <- system.file(package = "DRIM")
   return(packages_dir)
 }
-#' @title env_python_set
+#' @title pythonEnvSet
 #' @description
 #' Set the path of the conda environment you use
 #' Many python programs are called in our program,
@@ -13,19 +13,19 @@ packages_path <- function(){
 #' @param py_path path of the conda environment
 #' @import reticulate
 #' @export
-env_python_set <- function(py_path){
+pythonEnvSet <- function(py_path){
   # library(reticulate)
   use_condaenv(py_path)
   #use_python(py_path)
 }
-#' @title env_test
+#' @title testEnv
 #' Detect environment dependencies of python
 #' @description
 #' You can use this function to detect if a package is missing from a dependent python environment.
 #' @return bool TRUE or FALSE
 #' @import reticulate
 #' @export
-env_test <- function(){
+testEnv <- function(){
   library(reticulate)
   package_flag <- TRUE
   package_detect <- c('anndata',
@@ -58,7 +58,7 @@ env_test <- function(){
   }
   return(package_flag)
 }
-#' @title data_deal
+#' @title dataProcessing
 #' data processing
 #' @description
 #' Preprocess the data to get the data we need later.
@@ -69,7 +69,7 @@ env_test <- function(){
 #' @param plot_data convolution data
 #' @import data.table
 #' @export
-data_deal <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_data,plot_data){
+dataProcessing <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_data,plot_data){
   library(data.table)
   data_path <- paste(packages_path(),'/data',sep = "")
   if(!dir.exists(data_path)){
@@ -82,14 +82,14 @@ data_deal <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_data,plot_dat
   fwrite(as.data.frame(sc_celltype_data),file = paste(data_path,'/sc_celltype.csv',sep = ""))
 }
 
-#' @title parameter_setting
+#' @title setParameters
 #' Hyperparameter setting
 #' @description
 #' Set Resolution and Cell Columns,resolution is the multiple of program amplification,
 #' Cell Columns is the specified column name
 #' @param resolution program magnification
 #' @param colname selected column name
-Parameter_settings <- function(resolution=4,thread=7,colname){
+setParameters <- function(resolution=4,thread=7,colname){
   if(thread==7){
     parameter_settings_csv <- c(resolution,colname)
   }
@@ -104,7 +104,6 @@ Parameter_settings <- function(resolution=4,thread=7,colname){
 #' @import reticulate
 #' @export
 call_python_program <- function(pyname){
-  #package_path<-c('E:/work/sunhang/code/package_0708')
   package_path_dir <- packages_path()
   os <- import('os')
   os$chdir(package_path_dir)
@@ -209,7 +208,7 @@ drim <- function(resolution=4,thread=7,colname){
   if(!env_test()){
     stop("The conda is not ready")
   }
-  Parameter_settings(resolution,thread,colname)
+  setParameters(resolution,thread,colname)
   Planarian_run()
   iterative_mapping_result_celltype_it_dir=paste(data_path,'/data/',resolution,'/mapping_result.csv',sep='')
   iterative_mapping_result_celltype_it=fread(input = iterative_mapping_result_celltype_it_dir)
