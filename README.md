@@ -100,6 +100,7 @@ Returns a dataframe object, if you want to return a seurat object, please use ge
 ### printing drim plot
 Printing processed plot of cell type mapped by drim.
 ```
+library(png)
 pic <- drimPlot()
 
 ```
