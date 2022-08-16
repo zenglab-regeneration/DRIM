@@ -97,7 +97,7 @@ result <- drim(resolution = 4,thread = 7,colname="final_celltype")
 ```
 Returns a dataframe object, if you want to return a seurat object, please use get_seurat_result.  
 
-### printing drim plot
+### Printing drim plot
 Printing processed plot of cell type mapped by drim.
 ```
 library(png)
