@@ -68,7 +68,7 @@ plot_data=read.csv("D:/code/data/deconvolution.csv", row.names = 1,header = TRUE
 **sc_exp_data**：Single-cell transcriptome gene expression matrix  
 **st_exp_data**：Spatial transcriptome gene expression matrix  
 **sc_celltype_data**：meta.data  
-**loc_data **：coordinates 
+**loc_data**：coordinates  
 **plot_data**：Cell type file divided by deconvolution  
 ```
 data_deal(sc_exp_data = sc_rds@assays$SCT@data,  
