@@ -55,7 +55,7 @@ env_python_set("D:/anaconda/envs/testconda")
 #Check the dependent environment for the program to run, and automatically install the missing python package
 env_test()
 ```
-### Datadeal
+### Data processing
 **sc_rds**:*Single-cell transcriptome data*  
 **st_rds**:Spatial transcriptome data    
 **plot_data**:Cell type file divided by deconvolution  
@@ -85,13 +85,13 @@ result <- drim(resolution = 4,thread = 7,colname="final_celltype")
 ```
 Returns a dataframe object, if you want to return a seurat object, please use get_seurat_result.  
 
-### Simple_draw
+### Drim plot
 ```
 pic <- simple_draw()
 ```
 You can use it to make a simple preliminary drawing of the results.
 ![DRIMplot](flow_chart/drimplot.png) 
-### Get_seurat_result
+### Get a seurat object
 **resolution**:magnification  
 **sc_rds**:Single-cell transcriptome data
 ```
