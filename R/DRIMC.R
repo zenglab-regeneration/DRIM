@@ -35,7 +35,7 @@ testEnv <- function(){
                     'math',
                     'matplotlib',
                     'numba',
-                    'numpy',
+                    'numpy==1.20.3',
                     'operator',
                     'pandas',
                     'pathlib',
@@ -44,7 +44,9 @@ testEnv <- function(){
                     'seaborn',
                     'sklearn',
                     'time',
-                    'rich')
+                    'rich',
+                    'plotly',
+                    'kaleido==0.1.0')
   for(package_name in package_detect){
     if(!py_module_available(package_name)){
       py_install(package_name, pip = T)
