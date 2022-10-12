@@ -81,7 +81,7 @@ dataProcessing <- function(sc_exp_data,st_exp_data,sc_celltype_data,loc_matrix,d
   fwrite(as.data.frame(sc_exp_data),file = paste(data_path,"/sc_exp.csv",sep = ""),row.names = TRUE)
   fwrite(as.data.frame(st_exp_data),file = paste(data_path,"/st_exp.csv",sep = ""),row.names = TRUE)
   fwrite(as.data.frame(loc_matrix),file = paste(data_path,'/st_loc.csv',sep = ""),row.names = TRUE)
-  fwrite(as.data.frame(sc_celltype_data),file = paste(data_path,'/sc_celltype.csv',sep = ""))
+  fwrite(as.data.frame(sc_celltype_data),file = paste(data_path,'/sc_celltype.csv',sep = ""),row.names = TRUE)
 }
 
 #' @title setParameters
